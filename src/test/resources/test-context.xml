@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- This overrides the jndi jee:lookup used in the real context -->
+    <bean id="mediaFilesBaseDirPath" class="java.lang.String" >
+        <constructor-arg value="/Volumes/webfaunat" />
+    </bean>
+
+    <bean id="geoadminAltitudesURI" class="java.lang.String" >
+        <constructor-arg value="https://api3.geo.admin.ch/rest/services/height" />
+    </bean>
+
+    <bean id="geoadminIdentifyURI" class="java.lang.String" >
+        <constructor-arg value="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" />
+    </bean>
+
+    <bean id="lv03toWgs84URI" class="java.lang.String" >
+        <constructor-arg value="http://tc-geodesy.bgdi.admin.ch/reframe/lv03towgs84" />
+    </bean>
+
+    <bean id="wgs84toLv03URI" class="java.lang.String" >
+        <constructor-arg value="http://tc-geodesy.bgdi.admin.ch/reframe/wgs84tolv03" />
+    </bean>
+
+</beans>
